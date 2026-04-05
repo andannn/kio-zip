@@ -27,6 +27,10 @@ kotlin {
     android {
         namespace = "io.github.andannn.zip"
         compileSdk = 36
+
+        withHostTest {
+            isIncludeAndroidResources = true
+        }
     }
 
     applyDefaultHierarchyTemplate {
