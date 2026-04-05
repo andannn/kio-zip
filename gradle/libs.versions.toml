@@ -1,0 +1,14 @@
+[versions]
+kotlinx-io = "0.9.0"
+agp = "9.0.0"
+kotlin = "2.3.10"
+mavenPublish = "0.36.0"
+
+[libraries]
+kotlinx-io = { group = "org.jetbrains.kotlinx", name = "kotlinx-io-core", version.ref = "kotlinx-io" }
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }
+
+[plugins]
+maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
