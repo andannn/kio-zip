@@ -7,6 +7,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.android.kotlin.multiplatform.library)
+    alias(libs.plugins.maven.publish)
 }
 
 kotlin {
@@ -48,6 +49,38 @@ kotlin {
 
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+        }
+    }
+}
+
+mavenPublishing {
+//    publishToMavenCentral()
+//    signAllPublications()
+
+    pom {
+        name.set("kio-zip")
+        description.set("Zip extension library using kotlinx-io.")
+        url.set("https://github.com/andannn/RaylibKt")
+
+        licenses {
+            license {
+                name.set("The Apache License, Version 2.0")
+                url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                distribution.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+            }
+        }
+
+        developers {
+            developer {
+                id.set("andannn")
+                name.set("Andannn")
+            }
+        }
+
+        scm {
+            url.set("https://github.com/andannn/kio-zip.git")
+            connection.set("scm:git:git://github.com/andannn/kio-zip.git")
+            developerConnection.set("scm:git:ssh://git@github.com/andannn/kio-zip.git")
         }
     }
 }
